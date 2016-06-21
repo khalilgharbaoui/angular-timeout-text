@@ -1,48 +1,92 @@
 <!DOCTYPE html>
 <html lang="en-us" ng-app="myApp">
-    <head>
-        <title>Learn and Understand AngularJS</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-        <meta charset="UTF-8">
 
-        <!-- load bootstrap and fontawesome via CDN -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-        <style>
-            html, body, input, select, textarea
-            {
-                font-size: 1.05em;
-            }
-        </style>
-        
-        <!-- load angular via CDN -->
-        <script src="//code.angularjs.org/1.3.0-rc.1/angular.min.js"></script>
-        <script src="app.js"></script>
-    </head>
-    <body>
+<head>
+    <title>Learn and Understand AngularJS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
 
-        <header>
-			<nav class="navbar navbar-default">
-			<div class="container">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="/">AngularJS</a>
-				</div>
+    <!-- load bootstrap and fontawesome via CDN -->
 
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-				</ul>
-			</div>
-			</nav>
-		</header>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 
-        <div class="container">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <style>
+        * {
+            border-radius: 0px !important;
+            -webkit-transition: all 0.5s ease-in !important;
+            -moz-transition:    all 0.5s ease-in !important;
+            -ms-transition:     all 0.5s ease-in !important;
+            -o-transition:      all 0.5s ease-in !important;
+        }
+        html,
+        body,
+        input,
+        select,
+        textarea {
+            font-size: 1.05em;
 
-            <div ng-controller="mainController">
-            
-                <h1>Hello {{ name + '. How are you?' }}</h1>
-                
+        }
+        a:hover{
+            text-decoration: none !important;
+        }
+
+    </style>
+
+    <!-- load angular via CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.7/angular-sanitize.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-controller="mainController">
+
+
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" style="text-align:center; href="/">KG's 1st AngularJS App</a>
+                </div>
             </div>
-            
-		</div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <div class="jumbotron" style="text-align:center;">
+            <h1>{{ greeting + name + message }}</h1>
+        </div>
+    </div>
 
-    </body>
+    <div class="container">
+
+
+
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4" ng-bind-html="emailbutton">
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6" style="text-align:center;" ng-bind-html="githublink">
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="footer" style="width:100%; height:50px; position: fixed; bottom:0; text-align:center;">
+        Made with <i class="fa fa-heart"></i> by <a href="http://khalilgharbaoui.codez.it">Khalil Gharbaoui</a>
+    </div>
+
+</body>
+
 </html>
